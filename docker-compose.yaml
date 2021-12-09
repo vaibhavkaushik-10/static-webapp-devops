@@ -1,0 +1,18 @@
+version: "3.4"
+services:
+  backend:
+    build: .    
+    container_name: app
+    #volumes:
+    #  - ./node-app/:/data/
+  nginx:
+    image: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./node-app/:/data-app/
+      - ./nginx/:/data-nginx/
+    links:
+      - backend
+
+
