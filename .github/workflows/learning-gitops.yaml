@@ -1,0 +1,11 @@
+name: Learning gitops
+on: [push]
+jobs:
+  a-simple-shell-command:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/node-setup@v2
+        with:
+          node-version: '14'
+      - run: echo "hello world"
